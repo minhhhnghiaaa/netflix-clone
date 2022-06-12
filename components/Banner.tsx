@@ -32,7 +32,7 @@ const Banner = ({netflixOriginals}: Props) => {
       </div>
 
       <h1 className="text-2xl md:text-4xl lg:text-7xl font-bold pt-10">{movie?.title || movie?.name || movie?.original_name}</h1>
-      <p className="max-w-xs max-h-10 text-xs text-shadow-md md:max-w-lg md:text-lg lg:max-w-2xl lg:text-2xl">{movie?.overview}</p>
+      <p className="max-w-xs text-xs text-shadow-md md:max-w-lg md:text-lg lg:max-w-2xl lg:text-2xl">{movie?.overview}</p>
 
       <div className="flex space-x-2">
         <button className="bannerButton bg-white text-black">

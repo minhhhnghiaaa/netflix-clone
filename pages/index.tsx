@@ -1,9 +1,14 @@
 // import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import { useState } from 'react'
+import { useRecoilValue } from 'recoil'
+import { modalState } from '../atoms/modalAtom'
 import Banner from '../components/Banner'
 import Header from '../components/Header'
+import Modal from '../components/Modal'
 import Row from '../components/Row'
+import useAuth from '../hooks/useAuth'
 import { Movie } from '../typings'
 import requests from '../utils/requests'
 
@@ -29,6 +34,15 @@ const Home = ({
   trendingNow,
 }: Props) => {
   //console.log(netflixOriginals)
+
+  const { loading } = useAuth()
+  const showModal = useRecoilValue(modalState)
+  // const [showModal, setShowModal] = useState(false)
+
+  if (loading) {
+    return null
+  }
+
   return (
     <div className="relative h-screen w-screen bg-gradient-to-b lg:h-[140vh]">
       <Head>
@@ -53,6 +67,7 @@ const Home = ({
           <Row title="Documentaries" movies={documentaries} />
         </section>
       </main>
+      {showModal && <Modal />}
     </div>
   )
 }

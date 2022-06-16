@@ -44,7 +44,7 @@ const Home = ({
   }
 
   return (
-    <div className="relative h-screen w-screen bg-gradient-to-b lg:h-[140vh]">
+    <div className={`relative h-screen w-screen bg-gradient-to-b lg:h-[140vh] ${showModal && '!h-screen overflow-hidden'}`}>
       <Head>
         <title>Home</title>
         <link rel="icon" href="/favicon.ico" />

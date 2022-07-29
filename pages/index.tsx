@@ -47,7 +47,7 @@ const Home = ({
 
   if (loading || subcription === null) return null
 
-  if (!subcription) return <Plans products={products} />
+//   if (!subcription) return <Plans products={products} />
 
   return (
     <div
